@@ -9,28 +9,27 @@ namespace RPSLS
     class Computer : Player
     {
         //member variables
-        public string name;
         Random rnd = new Random();
         public int randomInt;
-        public string playerChoice;
-
 
         //ctor
         public Computer()
         {
-
+  
         }
 
         //member methods
         public override void GetName()
         {
-            name = "Walter";
+             name = "Walter";
+            Console.WriteLine(name);
         }
 
         public override string GetChoice()
         {
             randomInt = rnd.Next(1, 6);
             playerChoice = Convert.ToString(randomInt);
+            Console.WriteLine(playerChoice);
 
             return playerChoice;
          }

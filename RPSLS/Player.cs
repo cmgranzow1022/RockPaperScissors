@@ -27,13 +27,18 @@ namespace RPSLS
 
         public virtual string GetChoice()
         {
-            Console.WriteLine("Select 1 to choose Rock.");
-            Console.WriteLine("Select 2 to choose Paper.");
-            Console.WriteLine("Select 3 to choose Scissors.");
-            Console.WriteLine("Select 4 to choose Lizard.");
-            Console.WriteLine("Select 5 to choose Spock.");
+            
+            Console.WriteLine("1 to choose Rock.");
+            Console.WriteLine("2 to choose Paper.");
+            Console.WriteLine("3 to choose Scissors.");
+            Console.WriteLine("4 to choose Lizard.");
+            Console.WriteLine("5 to choose Spock.");
             playerChoice = Console.ReadLine();
-
+            if (playerChoice != "1" & playerChoice != "2" & playerChoice != "3" & playerChoice != "4" & playerChoice != "5")
+            {
+                Console.WriteLine("You have entered an invalid option, Please try again.");
+                GetChoice();
+            }
             return playerChoice;
         }
     }

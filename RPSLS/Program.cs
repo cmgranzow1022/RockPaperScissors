@@ -19,7 +19,8 @@ namespace RPSLS
             }
 
             newGame.matchWinner();
-                newGame.playAgain();
+            Console.ReadLine();
+
         }
     }
 }

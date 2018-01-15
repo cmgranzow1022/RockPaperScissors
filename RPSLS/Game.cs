@@ -12,11 +12,10 @@ namespace RPSLS
 
         Player playerOne;
         Player playerTwo;
-        protected Player playerOneName;
         string determinePlayerTwo;
         public int playerOneScore = 0;
         public int playerTwoScore = 0;
-        string userInput;
+        //string userInput;
 
 
 
@@ -49,7 +48,6 @@ namespace RPSLS
             {
                 Console.WriteLine("You have entered an invalid option. Please try again.");
                 DeterminePlayerTwo();
-                
             }
         }
 
@@ -66,6 +64,7 @@ namespace RPSLS
             Console.WriteLine("- Paper disproves Spock");
             Console.WriteLine("- Spock vaporizes Rock");
             Console.WriteLine("- Rock crushes Scissors");
+            Console.WriteLine("Must win 2 out of 3 rounds to win the match.");
             Console.WriteLine("Press enter to begin");
             
         }
@@ -73,38 +72,42 @@ namespace RPSLS
         public void playGame()
         {
             Console.Clear();
+            Console.WriteLine(playerOne.name + ", what is your choice?");
             playerOne.GetChoice();
             Console.Clear();
+            Console.WriteLine(playerTwo.name + ", what is your choice?");
             playerTwo.GetChoice();
+
+            Console.WriteLine(playerOne.name + " chose " + playerOne.playerChoice + ".");
+            Console.WriteLine(playerTwo.name + " chose " + playerTwo.playerChoice + ".");
 
             if (playerOne.playerChoice == "1" & (playerTwo.playerChoice == "3" | playerTwo.playerChoice == "4"))
             {
-                Console.WriteLine("Player One won this round.");
+                Console.WriteLine(playerOne.name + " won this round.");
                 Console.ReadLine();
                 playerOneScore++; 
-
             }
             else if (playerOne.playerChoice == "2" & (playerTwo.playerChoice == "1" | playerTwo.playerChoice == "5"))
             {
-                Console.WriteLine("\n" + "Player One won this round.");
+                Console.WriteLine("\n" + playerOne.name + " won this round.");
                 Console.ReadLine();
                 playerOneScore++;
             }
             else if (playerOne.playerChoice == "3" & (playerTwo.playerChoice == "4" | playerTwo.playerChoice == "2"))
             {
-                Console.WriteLine("\n" + "Player One won this round.");
+                Console.WriteLine("\n" + playerOne.name + " won this round.");
                 Console.ReadLine();
                 playerOneScore++;
             }
             else if (playerOne.playerChoice == "4" & (playerTwo.playerChoice == "5"  | playerTwo.playerChoice == "2"))
             {
-                Console.WriteLine("\n" + "Player One won this round.");
+                Console.WriteLine("\n" + playerOne.name + " won this round.");
                 Console.ReadLine();
                 playerOneScore++;
             }
             else if (playerOne.playerChoice == "5" & (playerTwo.playerChoice == "3" | playerTwo.playerChoice == "1"))
             {
-                Console.WriteLine("\n" + "Player One won this round.");
+                Console.WriteLine("\n" + playerOne.name + " won this round.");
                 Console.ReadLine();
                 playerOneScore++;
             }
@@ -116,7 +119,7 @@ namespace RPSLS
             
             else
             {
-                Console.WriteLine("\n" + "Player Two won this round.");
+                Console.WriteLine("\n" + playerTwo.name + " won this round.");
                 Console.ReadLine();
                 playerTwoScore++;
             }
@@ -130,6 +133,7 @@ namespace RPSLS
             playerOne.GetName();
             Console.WriteLine("Player Two");
             playerTwo.GetName();
+ 
             gameInstructions();
             Console.ReadLine();
 
@@ -139,29 +143,15 @@ namespace RPSLS
         {
           if( playerOneScore == 2)
             {
-                Console.WriteLine("Player One Won the game!");
+                Console.WriteLine(playerOne.name + " won the match!");
             }
             else if(playerTwoScore == 2)
             {
-                Console.WriteLine("Player Two Won the game!");
+                Console.WriteLine(playerTwo.name + " won the match!");
             }
         }
 
-        public void playAgain()
-        {
-            Console.WriteLine("Would you like to play again? Enter 1 to play again or 0 to exit.");
-            userInput = Console.ReadLine();
 
-                switch(userInput)
-            {
-                case "1":
-                    GameSetUp();
-                    break;
-                case "2":
-                    Environment.Exit(0);
-                    break;
-
-            }
         }
     }
-}
+
