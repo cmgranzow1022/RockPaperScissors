@@ -10,6 +10,16 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+            Game newGame = new Game();
+
+            newGame.GameSetUp();
+            while (newGame.playerOneScore < 2 & newGame.playerTwoScore < 2)
+            {
+                newGame.playGame();
+            }
+
+            newGame.matchWinner();
+                newGame.playAgain();
         }
     }
 }
