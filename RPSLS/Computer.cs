@@ -23,6 +23,7 @@ namespace RPSLS
         {
              name = "Walter";
             Console.WriteLine(name);
+            Console.ResetColor();
             Console.WriteLine("\n" + "-- Press enter to continue to instructions--");
             Console.ReadLine();
         }
