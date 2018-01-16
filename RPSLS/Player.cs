@@ -40,8 +40,6 @@ namespace RPSLS
                 Console.WriteLine("You have entered an invalid option, Please try again.");
                 GetChoice();
             }
-
-
             return playerChoice;
         }
 

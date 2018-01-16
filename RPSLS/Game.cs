@@ -69,8 +69,8 @@ namespace RPSLS
             Console.ResetColor();
             Console.WriteLine("\n" + "--Press enter to begin--");
         }
-
-        public void playGame()
+        
+        public void gameLogic()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -90,75 +90,13 @@ namespace RPSLS
             Console.ResetColor();
 
 
-            if ((playerOne.playerChoice == "3" | playerTwo.playerChoice == "3") & (playerOne.playerChoice == "2" | playerTwo.playerChoice == "2"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Scissors cuts Paper");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "2" | playerTwo.playerChoice == "2") & (playerOne.playerChoice == "1" | playerTwo.playerChoice == "1"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Paper covers Rock");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "1" | playerTwo.playerChoice == "1") & (playerOne.playerChoice == "4" | playerTwo.playerChoice == "4"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Rock crushes Lizard");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "4" | playerTwo.playerChoice == "4") & (playerOne.playerChoice == "5" | playerTwo.playerChoice == "5"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Lizard poisons Spock");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "5" | playerTwo.playerChoice == "5") & (playerOne.playerChoice == "3" | playerTwo.playerChoice == "3"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Spock smashes Scissors");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "3" | playerTwo.playerChoice == "3") & (playerOne.playerChoice == "4" | playerTwo.playerChoice == "4"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Scissors decapitates Lizard");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "4" | playerTwo.playerChoice == "4") & (playerOne.playerChoice == "2" | playerTwo.playerChoice == "2"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Lizard eats Paper");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "2" | playerTwo.playerChoice == "2") & (playerOne.playerChoice == "5" | playerTwo.playerChoice == "5"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Paper disproves Spock");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "5" | playerTwo.playerChoice == "5") & (playerOne.playerChoice == "1" | playerTwo.playerChoice == "1"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Spock vaporizes Rock");
-                Console.ResetColor();
-            }
-            else if ((playerOne.playerChoice == "1" | playerTwo.playerChoice == "1") & (playerOne.playerChoice == "3" | playerTwo.playerChoice == "3"))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + "Rock crushes Scissors");
-                Console.ResetColor();
-            }
-            else if (playerOne.playerChoice == playerTwo.playerChoice)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine("\n" + "You both picked the same option - no points awarded this round.");
-                Console.ResetColor();
-            }
+        }
 
 
 
+
+    public void displayWinnerOfRound()
+        {
             if (playerOne.playerChoice == "1" & (playerTwo.playerChoice == "3" | playerTwo.playerChoice == "4"))
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -220,7 +158,77 @@ namespace RPSLS
             }
         }
 
-        public void GameSetUp()
+        public void displayWinningLogic()
+        {
+            if ((playerOne.playerChoice == "3" | playerTwo.playerChoice == "3") & (playerOne.playerChoice == "2" | playerTwo.playerChoice == "2"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Scissors cuts Paper.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "2" | playerTwo.playerChoice == "2") & (playerOne.playerChoice == "1" | playerTwo.playerChoice == "1"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Paper covers Rock.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "1" | playerTwo.playerChoice == "1") & (playerOne.playerChoice == "4" | playerTwo.playerChoice == "4"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Rock crushes Lizard.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "4" | playerTwo.playerChoice == "4") & (playerOne.playerChoice == "5" | playerTwo.playerChoice == "5"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Lizard poisons Spock.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "5" | playerTwo.playerChoice == "5") & (playerOne.playerChoice == "3" | playerTwo.playerChoice == "3"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Spock smashes Scissors.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "3" | playerTwo.playerChoice == "3") & (playerOne.playerChoice == "4" | playerTwo.playerChoice == "4"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Scissors decapitates Lizard.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "4" | playerTwo.playerChoice == "4") & (playerOne.playerChoice == "2" | playerTwo.playerChoice == "2"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Lizard eats Paper.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "2" | playerTwo.playerChoice == "2") & (playerOne.playerChoice == "5" | playerTwo.playerChoice == "5"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Paper disproves Spock.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "5" | playerTwo.playerChoice == "5") & (playerOne.playerChoice == "1" | playerTwo.playerChoice == "1"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Spock vaporizes Rock.");
+                Console.ResetColor();
+            }
+            else if ((playerOne.playerChoice == "1" | playerTwo.playerChoice == "1") & (playerOne.playerChoice == "3" | playerTwo.playerChoice == "3"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + "Rock crushes Scissors.");
+                Console.ResetColor();
+            }
+            else if (playerOne.playerChoice == playerTwo.playerChoice)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("\n" + "You both picked the same option - no points awarded this round.");
+                Console.ResetColor();
+            }
+        }
+
+        public void playGame()
         {
             DeterminePlayerTwo();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -233,46 +241,81 @@ namespace RPSLS
             Console.Clear();
             gameInstructions();
             Console.ReadLine();
+            while (playerOneScore < 2 & playerTwoScore < 2)
+            {
+                gameLogic();
+                displayWinningLogic();
+                displayWinnerOfRound();
+            }
+            gameWinner();
         }
 
-        public void matchWinner()
+        public void gameWinner()
         {
             Console.Clear();
             if (playerOneScore == 2)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n" + "    " + playerOne.name + " won the match!" + "\n");
-                celebration();
+                Console.WriteLine("\n" + "        " + playerOne.name + " won the match!" + "\n");
+                happyFace();
             }
             else if (playerTwoScore == 2)
             {
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                Console.WriteLine("\n" + "    " + playerTwo.name + " won the match!" + "\n");
-                celebration();
+                Console.WriteLine("\n" + "        " + playerTwo.name + " won the match!" + "\n");
+                    if (playerTwo.name == "Walter")
+                    {
+                         sadFace();
+                    }
+                    else
+                    {
+                    happyFace();
+                    }
             }
         }
 
-
-        public void celebration()
+        public void happyFace()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(" ´´´´´´´´´´´´´´´´´´´´´´´¶¶¶¶¶¶¶¶");
-            Console.WriteLine("´´´´´´¶¶¶¶¶´´´´´´´´¶¶¶¶´´´´´´´´¶¶¶¶");
-            Console.WriteLine("´´´´´¶´´´´´¶´´´´¶¶´´´´´´´´´´´´´´´´´´¶¶");
-            Console.WriteLine("´´´´´¶´´´´´¶´´´¶¶´´´´´´¶¶´´´´¶¶´´´´´´´¶¶");
-            Console.WriteLine("´´´´´¶´´´´¶´´¶¶´´´´´´´´¶¶´´´´¶¶´´´´´´´´¶¶");
-            Console.WriteLine("´´´´´´¶´´´¶´´´¶´´´´´´´´´´´´´´´´´´´´´´´´´¶¶");
-            Console.WriteLine("´´´´¶¶¶¶¶¶¶¶¶¶¶¶´´´´´´´´´´´´´´´´´´´´´´´´´¶¶");
-            Console.WriteLine("´´´¶´´´´´´´´´´´´¶´´´¶¶´´´´´´´´´´´¶¶´´´´´´¶¶");
-            Console.WriteLine("´´¶¶´´´´´´´´´´´´¶´´´¶¶´´´´´´´´´´´¶¶´´´´´´¶¶");
-            Console.WriteLine("´¶¶´´´¶¶¶¶¶¶¶¶¶¶¶´´´´´¶¶´´´´´´´¶¶´´´´´´´¶¶");
-            Console.WriteLine("´¶´´´´´´´´´´´´´´´¶´´´´´´¶¶¶¶¶¶¶´´´´´´´´¶¶");
-            Console.WriteLine("´¶¶´´´´´´´´´´´´´´¶´´´´´´´´´´´´´´´´´´´´¶¶");
-            Console.WriteLine("´´¶´´´¶¶¶¶¶¶¶¶¶¶¶¶´´´´´´´´´´´´´´´´´´´¶¶");
-            Console.WriteLine("´´¶¶´´´´´´´´´´´¶´´´¶¶¶¶´´´´´´´´´¶¶¶¶");
-            Console.WriteLine("´´´¶¶¶¶¶¶¶¶¶¶¶¶´´´´´´´´¶¶¶¶¶¶¶¶¶");
- 
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("                        ¶¶¶¶¶¶¶¶");
+            Console.WriteLine("      ¶¶¶¶¶        ¶¶¶¶´´´´´´´´¶¶¶¶");
+            Console.WriteLine("     ¶´´´´´¶    ¶¶´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("     ¶´´´´´¶   ¶¶´´´´´´¶¶´´´´¶¶´´´´´´´¶¶");
+            Console.WriteLine("     ¶´´´´¶  ¶¶´´´´´´´´¶¶´´´´¶¶´´´´´´´´¶¶");
+            Console.WriteLine("      ¶´´´¶   ¶´´´´´´´´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("    ¶¶¶¶¶¶¶¶¶¶¶¶´´´´´´´´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("   ¶´´´´´´´´´´´´¶´´´¶¶´´´´´´´´´´´¶¶´´´´´´¶¶");
+            Console.WriteLine("  ¶¶´´´´´´´´´´´´¶´´´¶¶´´´´´´´´´´´¶¶´´´´´´¶¶");
+            Console.WriteLine(" ¶¶´´´¶¶¶¶¶¶¶¶¶¶¶´´´´´¶¶´´´´´´´¶¶´´´´´´´¶¶");
+            Console.WriteLine(" ¶´´´´´´´´´´´´´´´¶´´´´´´¶¶¶¶¶¶¶´´´´´´´´¶¶");
+            Console.WriteLine(" ¶¶´´´´´´´´´´´´´´¶´´´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("  ¶´´´¶¶¶¶¶¶¶¶¶¶¶¶´´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("  ¶¶´´´´´´´´´´´¶   ¶¶¶¶´´´´´´´´´¶¶¶¶");
+            Console.WriteLine("   ¶¶¶¶¶¶¶¶¶¶¶¶        ¶¶¶¶¶¶¶¶¶");
         }
+
+        public void sadFace()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            Console.WriteLine("                               ¶¶¶¶¶¶¶¶");
+            Console.WriteLine("   ¶¶¶¶¶¶¶¶¶¶¶¶            ¶¶¶¶´´´´´´´´¶¶¶¶");
+            Console.WriteLine("   ¶´´´´´´´´´´´´¶       ¶¶´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("  ¶¶´´´´´´´´´´´´¶      ¶¶´´´´´´´¶¶´´´´¶¶´´´´´´´¶¶");
+            Console.WriteLine(" ¶¶´´´¶¶¶¶¶¶¶¶¶¶¶     ¶¶´´´´´´´´¶¶´´´´¶¶´´´´´´´´¶¶");
+            Console.WriteLine(" ¶´´´´´´´´´´´´´´´¶   ¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("  ¶¶´´´´´´´´´´´´´´¶ ¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("  ¶´´´¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶´´´´´´´´´´¶¶¶¶¶¶¶´´´´´´´´´´¶¶");
+            Console.WriteLine("  ¶¶´´´´´´´´´´´¶    ¶¶´´´´´´´´¶¶´´´´´´´¶¶´´´´´´´´¶¶");
+            Console.WriteLine("   ¶¶¶¶¶¶¶¶¶¶¶¶      ¶¶´´´´´¶¶´´´´´´´´´´´¶¶´´´´´´¶¶");
+            Console.WriteLine("         ¶´´´¶       ¶¶´´´´´¶¶´´´´´´´´´´´¶¶´´´´´¶¶");
+            Console.WriteLine("        ¶´´´´¶        ¶¶´´´´´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("       ¶´´´´´¶         ¶¶´´´´´´´´´´´´´´´´´´´¶¶");
+            Console.WriteLine("       ¶´´´´´¶           ¶¶¶¶´´´´´´´´´´´´¶¶¶¶");
+            Console.WriteLine("        ¶¶¶¶¶                 ¶¶¶¶¶¶¶¶¶");
+        }  
     }
 }
+
+
 
