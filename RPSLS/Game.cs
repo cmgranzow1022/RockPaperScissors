@@ -31,9 +31,10 @@ namespace RPSLS
 
         public void DeterminePlayerTwo()
         {
-            Console.WriteLine("Will player two be a human, or do you want to play against a computer? Please enter the number for your choice.");
-            Console.WriteLine("1. Human");
-            Console.WriteLine("2. Computer");
+            Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
+            Console.WriteLine("How do you want to play? Please enter the number for your choice.");
+            Console.WriteLine("1. Human vs. Human");
+            Console.WriteLine("2. Human vs Computer");
             determinePlayerTwo = Console.ReadLine();
 
             if (determinePlayerTwo == "1")
@@ -53,6 +54,7 @@ namespace RPSLS
 
         public void gameInstructions()
         {
+            Console.Clear();
             Console.WriteLine("Rules for Rock, Paper, Scissors, Lizard, Spock:");
             Console.WriteLine("- Scissors cuts Paper");
             Console.WriteLine("- Paper covers Rock");
@@ -65,7 +67,7 @@ namespace RPSLS
             Console.WriteLine("- Spock vaporizes Rock");
             Console.WriteLine("- Rock crushes Scissors");
             Console.WriteLine("Must win 2 out of 3 rounds to win the match.");
-            Console.WriteLine("Press enter to begin");
+            Console.WriteLine("\n" + "--Press enter to begin--");
             
         }
 
@@ -77,49 +79,102 @@ namespace RPSLS
             Console.Clear();
             Console.WriteLine(playerTwo.name + ", what is your choice?");
             playerTwo.GetChoice();
+            Console.Clear();
+            Console.WriteLine(playerOne.name + " chose " + playerOne.ToChoice() + ".");
+            Console.WriteLine(playerTwo.name + " chose " + playerTwo.ToChoice() + ".");
 
-            Console.WriteLine(playerOne.name + " chose " + playerOne.playerChoice + ".");
-            Console.WriteLine(playerTwo.name + " chose " + playerTwo.playerChoice + ".");
+
+            if ((playerOne.playerChoice == "3" | playerTwo.playerChoice == "3") & ( playerOne.playerChoice == "2" | playerTwo.playerChoice == "2"))
+            {
+                Console.WriteLine("\n" + "Scissors cuts Paper");
+            }
+            else if ((playerOne.playerChoice == "2" | playerTwo.playerChoice == "2") & (playerOne.playerChoice == "1" | playerTwo.playerChoice == "1"))
+            {
+                Console.WriteLine("\n" + "Paper covers Rock");
+            }
+            else if ((playerOne.playerChoice == "1" | playerTwo.playerChoice == "1") & (playerOne.playerChoice == "4" | playerTwo.playerChoice == "4"))
+            {
+                Console.WriteLine("\n" + "Rock crushes Lizard");
+            }
+            else if ((playerOne.playerChoice == "4" | playerTwo.playerChoice == "4") & (playerOne.playerChoice == "5" | playerTwo.playerChoice == "5"))
+            {
+                Console.WriteLine("\n" + "Lizard poisons Spock");
+            }
+            else if ((playerOne.playerChoice == "5" | playerTwo.playerChoice == "5") & (playerOne.playerChoice == "3" | playerTwo.playerChoice == "3"))
+            {
+                Console.WriteLine("\n" + "Spock smashes Scissors");
+            }
+            else if ((playerOne.playerChoice == "3" | playerTwo.playerChoice == "3") & (playerOne.playerChoice == "4" | playerTwo.playerChoice == "4"))
+            {
+                Console.WriteLine("\n" + "Scissors decapitates Lizard");
+            }
+            else if ((playerOne.playerChoice == "4" | playerTwo.playerChoice == "4") & (playerOne.playerChoice == "2" | playerTwo.playerChoice == "2"))
+            {
+                Console.WriteLine("\n" + "Lizard eats Paper");
+            }
+            else if ((playerOne.playerChoice == "2" | playerTwo.playerChoice == "2") & (playerOne.playerChoice == "5" | playerTwo.playerChoice == "5"))
+            {
+                Console.WriteLine("\n" + "Paper disproves Spock");
+            }
+            else if ((playerOne.playerChoice == "5" | playerTwo.playerChoice == "5") & (playerOne.playerChoice == "1" | playerTwo.playerChoice == "1"))
+            {
+                Console.WriteLine("\n" + "Spock vaporizes Rock");
+            }
+            else if ((playerOne.playerChoice == "1" | playerTwo.playerChoice == "1") & (playerOne.playerChoice == "3" | playerTwo.playerChoice == "3"))
+            {
+                Console.WriteLine("\n" + "Rock crushes Scissors");
+            }
+            else if (playerOne.playerChoice == playerTwo.playerChoice)
+            {
+                Console.WriteLine("\n" + "You both picked the same option - no points awarded this round.");
+            }
+            
+
 
             if (playerOne.playerChoice == "1" & (playerTwo.playerChoice == "3" | playerTwo.playerChoice == "4"))
             {
                 Console.WriteLine(playerOne.name + " won this round.");
+                Console.WriteLine("\n" + "--Press enter to continue--");
                 Console.ReadLine();
                 playerOneScore++; 
             }
             else if (playerOne.playerChoice == "2" & (playerTwo.playerChoice == "1" | playerTwo.playerChoice == "5"))
             {
                 Console.WriteLine("\n" + playerOne.name + " won this round.");
+                Console.WriteLine("\n" + "--Press enter to continue--");
                 Console.ReadLine();
                 playerOneScore++;
             }
             else if (playerOne.playerChoice == "3" & (playerTwo.playerChoice == "4" | playerTwo.playerChoice == "2"))
             {
                 Console.WriteLine("\n" + playerOne.name + " won this round.");
+                Console.WriteLine("\n" + "--Press enter to continue--");
                 Console.ReadLine();
                 playerOneScore++;
             }
             else if (playerOne.playerChoice == "4" & (playerTwo.playerChoice == "5"  | playerTwo.playerChoice == "2"))
             {
                 Console.WriteLine("\n" + playerOne.name + " won this round.");
+                Console.WriteLine("\n" + "--Press enter to continue--");
                 Console.ReadLine();
                 playerOneScore++;
             }
             else if (playerOne.playerChoice == "5" & (playerTwo.playerChoice == "3" | playerTwo.playerChoice == "1"))
             {
                 Console.WriteLine("\n" + playerOne.name + " won this round.");
+                Console.WriteLine("\n" + "--Press enter to continue--");
                 Console.ReadLine();
                 playerOneScore++;
             }
             else if (playerOne.playerChoice == playerTwo.playerChoice)
             {
-                Console.WriteLine("\n" + "It's a tie! ");
+                Console.WriteLine("\n" + "--Press enter to continue--");
                 Console.ReadLine();
             }
-            
             else
             {
                 Console.WriteLine("\n" + playerTwo.name + " won this round.");
+                Console.WriteLine("\n" + "--Press enter to continue--");
                 Console.ReadLine();
                 playerTwoScore++;
             }
@@ -133,7 +188,7 @@ namespace RPSLS
             playerOne.GetName();
             Console.WriteLine("Player Two");
             playerTwo.GetName();
- 
+            Console.Clear();
             gameInstructions();
             Console.ReadLine();
 
@@ -141,7 +196,8 @@ namespace RPSLS
 
         public void matchWinner()
         {
-          if( playerOneScore == 2)
+            Console.Clear();
+            if( playerOneScore == 2)
             {
                 Console.WriteLine(playerOne.name + " won the match!");
             }
@@ -150,6 +206,8 @@ namespace RPSLS
                 Console.WriteLine(playerTwo.name + " won the match!");
             }
         }
+
+ 
 
 
         }

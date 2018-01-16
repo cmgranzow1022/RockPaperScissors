@@ -23,6 +23,8 @@ namespace RPSLS
         {
              name = "Walter";
             Console.WriteLine(name);
+            Console.WriteLine("\n" + "-- Press enter to continue to instructions--");
+            Console.ReadLine();
         }
 
         public override string GetChoice()
@@ -30,6 +32,7 @@ namespace RPSLS
             randomInt = rnd.Next(1, 6);
             playerChoice = Convert.ToString(randomInt);
             Console.WriteLine(playerChoice);
+
 
             return playerChoice;
          }
